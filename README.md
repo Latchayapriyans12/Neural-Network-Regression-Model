@@ -43,40 +43,54 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM
-### Name:
-### Register Number:
-```python
-class NeuralNet(nn.Module):
+### Name:LATCHAYA PRIYAN S
+### Register Number:212224230139
+```class NeuralNet(nn.Module):
     def __init__(self):
         super().__init__()
-        #Include your code here
+        self.fc1 = nn.Linear(1, 8)
+        self.fc2 = nn.Linear(8, 10)
+        self.fc3 = nn.Linear(10, 1)
+        self.relu = nn.ReLU()
+        self.history = {'loss': []}
 
+    def forward(self, x):
+        x = self.relu(self.fc1(x))
+        x = self.relu(self.fc2(x))
+        x = self.fc3(x) 
+        return x
 
-
-# Initialize the Model, Loss Function, and Optimizer
-
-
+ai_brain = NeuralNet()
+criterion = nn.MSELoss()
+optimizer = optim.RMSprop(ai_brain.parameters(), lr=0.001)
 
 def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
-    #Include your code here
+    for epoch in range(epochs):
+        optimizer.zero_grad()
+        loss = criterion(ai_brain(X_train), y_train)
+        loss.backward()
+        optimizer.step()
 
-
+        ai_brain.history['loss'].append(loss.item())
+        if epoch % 200 == 0:
+            print(f'Epoch [{epoch}/{epochs}], Loss: {loss.item():.6f}')
 
 ```
 ## Dataset Information
 
-Include screenshot of the dataset
+<img width="177" height="507" alt="image" src="https://github.com/user-attachments/assets/6a3b5d9e-a11f-4c68-91c9-abdfa564cf0c" />
+
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
-
-Include your plot here
+<img width="775" height="587" alt="image" src="https://github.com/user-attachments/assets/01a4db99-bc95-4f83-a7da-832a5a4cd3ce" />
 
 ### New Sample Data Prediction
+<img width="1035" height="126" alt="image" src="https://github.com/user-attachments/assets/566ba20a-0f9a-46e9-a554-ea2c5f9fa0f8" />
 
-Include your sample input and output here
+
 
 ## RESULT
 
-Include your result here
+The neural network regression model was successfully trained and evaluated. The model demonstrated strong predictive performance on unseen data, with a low error rate.
