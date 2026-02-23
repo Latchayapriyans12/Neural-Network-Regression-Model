@@ -9,8 +9,8 @@ To develop a neural network regression model for the given dataset.
 Explain the problem statement
 
 ## Neural Network Model
+<img width="919" height="599" alt="image" src="https://github.com/user-attachments/assets/889d4c0c-01c0-4cce-a2bb-f055d610a87d" />
 
-Include the neural network model diagram.
 
 ## DESIGN STEPS
 
@@ -87,7 +87,7 @@ def train_model(ai_brain, X_train, y_train, criterion, optimizer, epochs=2000):
 <img width="775" height="587" alt="image" src="https://github.com/user-attachments/assets/01a4db99-bc95-4f83-a7da-832a5a4cd3ce" />
 
 ### New Sample Data Prediction
-<img width="1035" height="126" alt="image" src="https://github.com/user-attachments/assets/566ba20a-0f9a-46e9-a554-ea2c5f9fa0f8" />
+<img width="1266" height="308" alt="image" src="https://github.com/user-attachments/assets/1a9d90ae-f34e-43ed-b111-c67281626ccb" />
 
 
 
